@@ -5,7 +5,7 @@ Vue.component('slider-form', {
     data: function() {
         return {
             form: {
-                
+                link:  '' ,
             },
             mediaCollections: ['cover']
         }

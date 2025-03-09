@@ -29,7 +29,7 @@
             <div class="card-content-mission">
                 <h2>{{ $research_post[0]->title }}</h2>
                 <p>{!! $research_post[0]->description !!}</p>
-                <a href="http://localhost:8000/category/about-us-7">Learn More</a>
+                <a href="https://cita.agu.edu.tr/category/about-us-7">Learn More</a>
             </div>
             <div class="card-mission-image"></div>
         </div>
@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-                <a href="http://localhost:8000/category/news--events-11"> 
+                <a href="https://cita.agu.edu.tr/category/news--events-11"> 
                 <button type="button" class="btn btn-dark">MORE</button>
             </a>
             </div>

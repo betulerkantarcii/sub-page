@@ -36,3 +36,13 @@
         </div>
     </div>
  @endif
+
+ <div class="form-group row align-items-center" :class="{'has-danger': errors.has('link'), 'has-success': fields.link && fields.link.valid }">
+    <label for="link" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.slider.columns.link') }}</label>
+    <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+        <div>
+            <textarea class="form-control" v-model="form.link" v-validate="''" id="link" name="link"></textarea>
+        </div>
+        <div v-if="errors.has('link')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('link') }}</div>
+    </div>
+</div>

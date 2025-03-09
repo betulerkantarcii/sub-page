@@ -26,7 +26,7 @@ class UpdateSlider extends FormRequest
     public function rules(): array
     {
         return [
-            
+            'link' => ['nullable', 'string'],
         ];
     }
 

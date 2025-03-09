@@ -117,7 +117,7 @@ $factory->define(App\Models\Research::class, static function (Faker\Generator $f
 /** @var  \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Models\Slider::class, static function (Faker\Generator $faker) {
     return [
-        
+        'link' => $faker->text(),
         
     ];
 });

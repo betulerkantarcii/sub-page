@@ -46,7 +46,7 @@ class Slider extends Model implements HasMedia
     protected $table = 'slider';
 
     protected $fillable = [
-    
+        'link',
     ];
     
     

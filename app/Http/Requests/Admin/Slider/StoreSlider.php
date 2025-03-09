@@ -26,7 +26,7 @@ class StoreSlider extends FormRequest
     public function rules(): array
     {
         return [
-            
+            'link' => ['nullable', 'string'],
         ];
     }
 
