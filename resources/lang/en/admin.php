@@ -261,6 +261,7 @@ return [
         'columns' => [
             'id' => 'ID',
             'heading' => 'Heading',
+            'info' => 'Information',
             'link' => 'Link',
             'published' => 'Published',
             'enabled' => 'Enabled',

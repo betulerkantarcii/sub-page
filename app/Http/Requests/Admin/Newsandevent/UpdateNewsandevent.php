@@ -27,6 +27,7 @@ class UpdateNewsandevent extends FormRequest
     {
         return [
             'heading' => ['sometimes', 'string'],
+            'info' => ['nullable', 'string'],
             'link' => ['nullable', 'string'],
             'published' => ['nullable', 'date'],
             'enabled' => ['sometimes', 'boolean'],

@@ -7,6 +7,7 @@ Vue.component('research-form', {
             form: {
                 title:  '' ,
                 description:  '' ,
+                link:  '' ,
                 
             },
             mediaCollections: ['cover']

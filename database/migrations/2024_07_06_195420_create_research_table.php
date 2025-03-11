@@ -17,6 +17,7 @@ class CreateResearchTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
+            $table->text('link')->nullable();
         });
     }
 

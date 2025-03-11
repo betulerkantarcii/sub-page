@@ -6,6 +6,7 @@ Vue.component('newsandevent-form', {
         return {
             form: {
                 heading:  '' ,
+                info:  '' ,
                 link:  '' ,
                 published:  '' ,
                 enabled:  false ,

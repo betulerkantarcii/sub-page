@@ -110,6 +110,7 @@ $factory->define(App\Models\Research::class, static function (Faker\Generator $f
     return [
         'title' => $faker->sentence,
         'description' => $faker->text(),
+        'link' => $faker->text(),
         
         
     ];
@@ -125,6 +126,7 @@ $factory->define(App\Models\Slider::class, static function (Faker\Generator $fak
 $factory->define(App\Models\Newsandevent::class, static function (Faker\Generator $faker) {
     return [
         'heading' => $faker->sentence,
+        'info' => $faker->text(),
         'link' => $faker->text(),
         'published' => $faker->date(),
         'enabled' => $faker->boolean(),

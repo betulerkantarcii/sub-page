@@ -5461,6 +5461,7 @@ Vue.component('newsandevent-form', {
     return {
       form: {
         heading: '',
+        info: '',
         link: '',
         published: '',
         enabled: false
@@ -5617,7 +5618,8 @@ Vue.component('research-form', {
     return {
       form: {
         title: '',
-        description: ''
+        description: '',
+        link: ''
       },
       mediaCollections: ['cover']
     };

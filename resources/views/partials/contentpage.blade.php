@@ -9,7 +9,7 @@
   @if(count($slider_post) > 0)
   @for($i=count($slider_post)-1; $i>=0; $i--)
   <div class="mySlides fadeon">
-    <img src="{{ url($sliderPost_urls[$i]) }}" style="width:100%">
+    <a href="{{ $slider_post[$i]->link }}"> <img src="{{ url($sliderPost_urls[$i]) }}" style="width:100%"> </a>
   </div>
   @endfor
   @else
@@ -29,7 +29,7 @@
             <div class="card-content-mission">
                 <h2>{{ $research_post[0]->title }}</h2>
                 <p>{!! $research_post[0]->description !!}</p>
-                <a href="https://cita.agu.edu.tr/category/about-us-7">Learn More</a>
+                <a href="{{ $research_post[0]->link }}">Learn More</a>
             </div>
             <div class="card-mission-image"></div>
         </div>
@@ -58,6 +58,7 @@
                         @else
                         <h2><a href="{{ $newsandevent_post[$i]->link }}">{{ $newsandevent_post[$i]->heading }}</a></h2>
                         @endif
+                        <p> {{ $newsandevent_post[$i]->info }} </p>
                     </div>
                 </div>
             @endfor

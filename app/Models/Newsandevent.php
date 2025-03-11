@@ -45,6 +45,7 @@ class Newsandevent extends Model implements HasMedia
 
     protected $fillable = [
         'heading',
+        'info',
         'link',
         'published',
         'enabled',

@@ -27,6 +27,7 @@ class StoreNewsandevent extends FormRequest
     {
         return [
             'heading' => ['required', 'string'],
+            'info' => ['nullable', 'string'],
             'link' => ['nullable', 'string'],
             'published' => ['nullable', 'date'],
             'enabled' => ['required', 'boolean'],

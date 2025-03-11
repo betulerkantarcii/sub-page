@@ -62,9 +62,9 @@
                                 }
                             }
                      ?>  
-                     @if($count_submenu > 1)      
+                     @if($count_submenu > 1)   
                         <li class="nav-item dropdown">   
-                            <a class="nav-link dropdown-toggle" href="" id="kategori" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            <a class="dropdown-toggle nav-link" href="#" id="kategori" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                 {{$menu_list[$i]->name}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="kategori">

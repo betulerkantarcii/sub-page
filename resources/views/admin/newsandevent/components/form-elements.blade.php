@@ -16,6 +16,17 @@
     </div>
 </div>
 
+
+<div class="form-group row align-items-center" :class="{'has-danger': errors.has('info'), 'has-success': fields.info && fields.info.valid }">
+    <label for="info" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.newsandevent.columns.info') }}</label>
+    <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+        <div>
+            <textarea class="form-control" v-model="form.info" v-validate="''" id="info" name="info"></textarea>
+        </div>
+        <div v-if="errors.has('info')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('info') }}</div>
+    </div>
+</div>
+
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('published'), 'has-success': fields.published && fields.published.valid }">
     <label for="published" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.newsandevent.columns.published') }}</label>
     <div :class="isFormLocalized ? 'col-md-4' : 'col-sm-8'">

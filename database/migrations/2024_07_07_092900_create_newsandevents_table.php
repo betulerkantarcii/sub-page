@@ -16,6 +16,7 @@ class CreateNewsandeventsTable extends Migration
         Schema::create('newsandevents', function (Blueprint $table) {
             $table->id();
             $table->string('heading');
+            $table->text('info')->nullable();
             $table->text('link')->nullable();
             $table->date('published')->nullable();
             $table->boolean('enabled')->default(true);

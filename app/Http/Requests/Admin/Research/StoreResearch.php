@@ -28,6 +28,7 @@ class StoreResearch extends FormRequest
         return [
             'title' => ['required', 'string'],
             'description' => ['required', 'string'],
+            'link' => ['nullable', 'string'],
             
         ];
     }
