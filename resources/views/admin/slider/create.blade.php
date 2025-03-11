@@ -10,6 +10,8 @@
         
         <slider-form
             :action="'{{ url('admin/sliders') }}'"
+            :locales="{{ json_encode($locales) }}"
+            :send-empty-locales="false"
             v-cloak
             inline-template>
 

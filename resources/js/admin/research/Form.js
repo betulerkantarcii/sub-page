@@ -5,12 +5,12 @@ Vue.component('research-form', {
     data: function() {
         return {
             form: {
-                title:  '' ,
-                description:  '' ,
-                link:  '' ,
+                title:  this.getLocalizedFormDefaults() ,
+                description:  this.getLocalizedFormDefaults() ,
+                link:  this.getLocalizedFormDefaults() ,
                 
             },
-            mediaCollections: ['cover']
+            mediaCollections: ['cover'],
         }
     }
 

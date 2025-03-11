@@ -9,7 +9,9 @@
 
             <videolink-form
                 :action="'{{ $videolink->resource_url }}'"
-                :data="{{ $videolink->toJson() }}"
+                :data="{{ $videolink->toJsonAllLocales() }}"
+                :locales="{{ json_encode($locales) }}"
+                :send-empty-locales="false"
                 v-cloak
                 inline-template>
             

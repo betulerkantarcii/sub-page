@@ -51,13 +51,15 @@
 
                                         <th is='sortable' :column="'id'">{{ trans('admin.newsandevent.columns.id') }}</th>
                                         <th is='sortable' :column="'heading'">{{ trans('admin.newsandevent.columns.heading') }}</th>
+                                        <th is='sortable' :column="'info'">{{ trans('admin.newsandevent.columns.info') }}</th>
+                                        <th is='sortable' :column="'link'">{{ trans('admin.newsandevent.columns.link') }}</th>
                                         <th is='sortable' :column="'published'">{{ trans('admin.newsandevent.columns.published') }}</th>
                                         <th is='sortable' :column="'enabled'">{{ trans('admin.newsandevent.columns.enabled') }}</th>
 
                                         <th></th>
                                     </tr>
                                     <tr v-show="(clickedBulkItemsCount > 0) || isClickedAll">
-                                        <td class="bg-bulk-info d-table-cell text-center" colspan="6">
+                                        <td class="bg-bulk-info d-table-cell text-center" colspan="8">
                                             <span class="align-middle font-weight-light text-dark">{{ trans('brackets/admin-ui::admin.listing.selected_items') }} @{{ clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/newsandevents')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> {{ trans('brackets/admin-ui::admin.listing.check_all_items') }} @{{ pagination.state.total }}</a> <span class="text-primary">|</span> <a
                                                         href="#" class="text-primary" @click="onBulkItemsClickedAllUncheck()">{{ trans('brackets/admin-ui::admin.listing.uncheck_all_items') }}</a>  </span>
 
@@ -78,6 +80,8 @@
 
                                     <td>@{{ item.id }}</td>
                                         <td>@{{ item.heading }}</td>
+                                        <td>@{{ item.info }}</td>
+                                        <td>@{{ item.link }}</td>
                                         <td>@{{ item.published | date }}</td>
                                         <td>
                                             <label class="switch switch-3d switch-success">

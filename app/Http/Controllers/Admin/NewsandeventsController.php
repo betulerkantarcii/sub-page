@@ -37,10 +37,10 @@ class NewsandeventsController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'heading', 'published', 'enabled'],
+            ['id', 'heading', 'info', 'link', 'published', 'enabled'],
 
             // set columns to searchIn
-            ['id', 'heading', 'link']
+            ['id', 'heading', 'info', 'link']
         );
 
         if ($request->ajax()) {
@@ -81,7 +81,8 @@ class NewsandeventsController extends Controller
         // Sanitize input
         $sanitized = $request->getSanitized();
 
-        $newsandevent = Newsandevent::create($request->validated());
+        // Store the Newsandevent
+        $newsandevent = Newsandevent::create($sanitized);
 
         if ($request->ajax()) {
             return ['redirect' => url('admin/newsandevents'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];

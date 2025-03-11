@@ -2,11 +2,11 @@
 
 namespace App\Http\Requests\Admin\Newsandevent;
 
-use Illuminate\Foundation\Http\FormRequest;
+use Brackets\Translatable\TranslatableFormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 
-class UpdateNewsandevent extends FormRequest
+class UpdateNewsandevent extends TranslatableFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -18,19 +18,30 @@ class UpdateNewsandevent extends FormRequest
         return Gate::allows('admin.newsandevent.edit', $this->newsandevent);
     }
 
-    /**
-     * Get the validation rules that apply to the request.
+/**
+     * Get the validation rules that apply to the requests untranslatable fields.
      *
      * @return array
      */
-    public function rules(): array
-    {
+    public function untranslatableRules(): array {
+        return [
+            'published' => ['nullable', 'date'],
+            'enabled' => ['sometimes', 'boolean'],
+            
+
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the requests translatable fields.
+     *
+     * @return array
+     */
+    public function translatableRules($locale): array {
         return [
             'heading' => ['sometimes', 'string'],
             'info' => ['nullable', 'string'],
             'link' => ['nullable', 'string'],
-            'published' => ['nullable', 'date'],
-            'enabled' => ['sometimes', 'boolean'],
             
         ];
     }

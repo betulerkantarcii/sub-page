@@ -9,14 +9,49 @@ use Brackets\Media\HasMedia\HasMediaCollectionsTrait;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\MediaLibrary\HasMedia;
 use Brackets\Media\HasMedia\HasMediaThumbsTrait;
+use Brackets\Translatable\Traits\HasTranslations;
+
+
 
 class Newsandevent extends Model implements HasMedia
 {
-
+    use HasTranslations;
     use ProcessMediaTrait;
     use AutoProcessMediaTrait;
     use HasMediaCollectionsTrait;
     use HasMediaThumbsTrait;
+    
+    protected $fillable = [
+        'heading',
+        'info',
+        'link',
+        'published',
+        'enabled',
+    
+    ];
+    
+    
+    protected $dates = [
+        'published',
+    
+    ];
+    // these attributes are translatable
+    public $translatable = [
+        'heading',
+        'info',
+        'link',
+    
+    ];
+    public $timestamps = false;
+    
+    protected $appends = ['resource_url'];
+
+    /* ************************ ACCESSOR ************************* */
+
+    public function getResourceUrlAttribute()
+    {
+        return url('/admin/newsandevents/'.$this->getKey());
+    }
 
     public function registerMediaCollections(): void
     {
@@ -42,29 +77,4 @@ class Newsandevent extends Model implements HasMedia
         $this->autoRegisterThumb200();
     }
 
-
-    protected $fillable = [
-        'heading',
-        'info',
-        'link',
-        'published',
-        'enabled',
-    
-    ];
-    
-    
-    protected $dates = [
-        'published',
-    
-    ];
-    public $timestamps = false;
-    
-    protected $appends = ['resource_url'];
-
-    /* ************************ ACCESSOR ************************* */
-
-    public function getResourceUrlAttribute()
-    {
-        return url('/admin/newsandevents/'.$this->getKey());
-    }
 }

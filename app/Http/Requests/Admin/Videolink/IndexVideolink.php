@@ -25,7 +25,7 @@ class IndexVideolink extends FormRequest
     public function rules(): array
     {
         return [
-            'orderBy' => 'in:id|nullable',
+            'orderBy' => 'in:id,link|nullable',
             'orderDirection' => 'in:asc,desc|nullable',
             'search' => 'string|nullable',
             'page' => 'integer|nullable',

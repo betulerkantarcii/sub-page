@@ -10,6 +10,8 @@
         
         <newsandevent-form
             :action="'{{ url('admin/newsandevents') }}'"
+            :locales="{{ json_encode($locales) }}"
+            :send-empty-locales="false"
             v-cloak
             inline-template>
 

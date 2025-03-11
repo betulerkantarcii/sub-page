@@ -2,11 +2,11 @@
 
 namespace App\Http\Requests\Admin\Research;
 
-use Illuminate\Foundation\Http\FormRequest;
+use Brackets\Translatable\TranslatableFormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 
-class UpdateResearch extends FormRequest
+class UpdateResearch extends TranslatableFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -18,13 +18,24 @@ class UpdateResearch extends FormRequest
         return Gate::allows('admin.research.edit', $this->research);
     }
 
-    /**
-     * Get the validation rules that apply to the request.
+/**
+     * Get the validation rules that apply to the requests untranslatable fields.
      *
      * @return array
      */
-    public function rules(): array
-    {
+    public function untranslatableRules(): array {
+        return [
+            
+
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the requests translatable fields.
+     *
+     * @return array
+     */
+    public function translatableRules($locale): array {
         return [
             'title' => ['sometimes', 'string'],
             'description' => ['sometimes', 'string'],

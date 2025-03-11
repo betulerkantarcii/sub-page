@@ -37,10 +37,10 @@ class ResearchController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'title'],
+            ['id', 'title', 'description', 'link'],
 
             // set columns to searchIn
-            ['id', 'title', 'description']
+            ['id', 'title', 'description', 'link']
         );
 
         if ($request->ajax()) {
@@ -63,7 +63,6 @@ class ResearchController extends Controller
      */
     public function create()
     {
-
         $this->authorize('admin.research.create');
 
         return view('admin.research.create',[
@@ -82,7 +81,8 @@ class ResearchController extends Controller
         // Sanitize input
         $sanitized = $request->getSanitized();
 
-        $research = Research::create($request->validated());
+        // Store the Research
+        $research = Research::create($sanitized);
 
         if ($request->ajax()) {
             return ['redirect' => url('admin/research'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
@@ -119,7 +119,7 @@ class ResearchController extends Controller
 
         return view('admin.research.edit', [
             'research' => $research,
-            'mode' => 'edit',
+            'mode' => 'edit'
         ]);
     }
 

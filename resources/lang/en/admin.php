@@ -285,5 +285,144 @@ return [
         ],
     ],
 
+    'videolink' => [
+        'title' => 'Videolink',
+
+        'actions' => [
+            'index' => 'Videolink',
+            'create' => 'New Videolink',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            
+        ],
+    ],
+
+    'videolink' => [
+        'title' => 'Videolink',
+
+        'actions' => [
+            'index' => 'Videolink',
+            'create' => 'New Videolink',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'link' => 'Link',
+            
+        ],
+    ],
+
+    'slider' => [
+        'title' => 'Slider',
+
+        'actions' => [
+            'index' => 'Slider',
+            'create' => 'New Slider',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'link' => 'Link',
+            
+        ],
+    ],
+
+    'research' => [
+        'title' => 'Research',
+
+        'actions' => [
+            'index' => 'Research',
+            'create' => 'New Research',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'title' => 'Title',
+            'description' => 'Description',
+            'link' => 'Link',
+            
+        ],
+    ],
+
+    'newsandevent' => [
+        'title' => 'Newsandevents',
+
+        'actions' => [
+            'index' => 'Newsandevents',
+            'create' => 'New Newsandevent',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'heading' => 'Heading',
+            'link' => 'Link',
+            'published' => 'Published',
+            'enabled' => 'Enabled',
+            'info' => 'Info',
+            
+        ],
+    ],
+
+    'research' => [
+        'title' => 'Research',
+
+        'actions' => [
+            'index' => 'Research',
+            'create' => 'New Research',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'title' => 'Title',
+            'description' => 'Description',
+            'link' => 'Link',
+            
+        ],
+    ],
+
+    'newsandevent' => [
+        'title' => 'Newsandevents',
+
+        'actions' => [
+            'index' => 'Newsandevents',
+            'create' => 'New Newsandevent',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'heading' => 'Heading',
+            'info' => 'Info',
+            'link' => 'Link',
+            'published' => 'Published',
+            'enabled' => 'Enabled',
+            
+        ],
+    ],
+
+    'slider' => [
+        'title' => 'Slider',
+
+        'actions' => [
+            'index' => 'Slider',
+            'create' => 'New Slider',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'link' => 'Link',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

@@ -25,7 +25,7 @@ class IndexResearch extends FormRequest
     public function rules(): array
     {
         return [
-            'orderBy' => 'in:id,title|nullable',
+            'orderBy' => 'in:id,title,description,link|nullable',
             'orderDirection' => 'in:asc,desc|nullable',
             'search' => 'string|nullable',
             'page' => 'integer|nullable',

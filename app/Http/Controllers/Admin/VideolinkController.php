@@ -37,10 +37,10 @@ class VideolinkController extends Controller
             $request,
 
             // set columns to query
-            ['id'],
+            ['id', 'link'],
 
             // set columns to searchIn
-            ['id', 'video_link']
+            ['id', 'link']
         );
 
         if ($request->ajax()) {

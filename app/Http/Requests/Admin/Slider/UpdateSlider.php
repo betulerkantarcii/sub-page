@@ -2,11 +2,11 @@
 
 namespace App\Http\Requests\Admin\Slider;
 
-use Illuminate\Foundation\Http\FormRequest;
+use Brackets\Translatable\TranslatableFormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 
-class UpdateSlider extends FormRequest
+class UpdateSlider extends TranslatableFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -18,15 +18,27 @@ class UpdateSlider extends FormRequest
         return Gate::allows('admin.slider.edit', $this->slider);
     }
 
-    /**
-     * Get the validation rules that apply to the request.
+/**
+     * Get the validation rules that apply to the requests untranslatable fields.
      *
      * @return array
      */
-    public function rules(): array
-    {
+    public function untranslatableRules(): array {
+        return [
+            
+
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the requests translatable fields.
+     *
+     * @return array
+     */
+    public function translatableRules($locale): array {
         return [
             'link' => ['nullable', 'string'],
+            
         ];
     }
 

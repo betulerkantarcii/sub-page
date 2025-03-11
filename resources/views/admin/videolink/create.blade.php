@@ -10,6 +10,8 @@
         
         <videolink-form
             :action="'{{ url('admin/videolinks') }}'"
+            :locales="{{ json_encode($locales) }}"
+            :send-empty-locales="false"
             v-cloak
             inline-template>
 

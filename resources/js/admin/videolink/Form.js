@@ -5,7 +5,7 @@ Vue.component('videolink-form', {
     data: function() {
         return {
             form: {
-                video_link:  '' ,
+                link:  this.getLocalizedFormDefaults() ,
                 
             }
         }

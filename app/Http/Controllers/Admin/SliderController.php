@@ -37,10 +37,10 @@ class SliderController extends Controller
             $request,
 
             // set columns to query
-            ['id'],
+            ['id', 'link'],
 
             // set columns to searchIn
-            ['id']
+            ['id', 'link']
         );
 
         if ($request->ajax()) {
@@ -81,7 +81,8 @@ class SliderController extends Controller
         // Sanitize input
         $sanitized = $request->getSanitized();
 
-        $slider = Slider::create($request->validated());
+        // Store the Slider
+        $slider = Slider::create($sanitized);
 
         if ($request->ajax()) {
             return ['redirect' => url('admin/sliders'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
@@ -118,7 +119,7 @@ class SliderController extends Controller
 
         return view('admin.slider.edit', [
             'slider' => $slider,
-            'mode' => 'edit',
+            'mode' => 'edit'
         ]);
     }
 

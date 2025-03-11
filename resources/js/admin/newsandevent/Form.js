@@ -5,14 +5,14 @@ Vue.component('newsandevent-form', {
     data: function() {
         return {
             form: {
-                heading:  '' ,
-                info:  '' ,
-                link:  '' ,
+                heading:  this.getLocalizedFormDefaults() ,
+                info:  this.getLocalizedFormDefaults() ,
+                link:  this.getLocalizedFormDefaults() ,
                 published:  '' ,
                 enabled:  false ,
                 
             },
-            mediaCollections: ['cover']
+            mediaCollections: ['cover'],
         }
     }
 

@@ -3,18 +3,25 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Brackets\Translatable\Traits\HasTranslations;
 
 class Videolink extends Model
 {
+use HasTranslations;
     protected $table = 'videolink';
 
     protected $fillable = [
-        'video_link',
+        'link',
     
     ];
     
     
     protected $dates = [
+    
+    ];
+    // these attributes are translatable
+    public $translatable = [
+        'link',
     
     ];
     public $timestamps = false;

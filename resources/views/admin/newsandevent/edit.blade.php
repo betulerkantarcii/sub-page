@@ -9,7 +9,9 @@
 
             <newsandevent-form
                 :action="'{{ $newsandevent->resource_url }}'"
-                :data="{{ $newsandevent->toJson() }}"
+                :data="{{ $newsandevent->toJsonAllLocales() }}"
+                :locales="{{ json_encode($locales) }}"
+                :send-empty-locales="false"
                 v-cloak
                 inline-template>
             

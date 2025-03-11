@@ -1,4 +1,8 @@
 
+@php
+    use Illuminate\Support\Facades\App;
+    $currentLocale = App::getLocale();
+@endphp
 <link rel="stylesheet" href="css/stylecontent.css">
 
 <div class="background-container">
@@ -9,7 +13,13 @@
   @if(count($slider_post) > 0)
   @for($i=count($slider_post)-1; $i>=0; $i--)
   <div class="mySlides fadeon">
-    <a href="{{ $slider_post[$i]->link }}"> <img src="{{ url($sliderPost_urls[$i]) }}" style="width:100%"> </a>
+    <a href="{{ $slider_post[$i]->link }}"> 
+    @if($currentLocale == 'tr')
+        <img src="{{ url($sliderPostTR_urls[$i]) }}" style="width:100%"> 
+    @else
+        <img src="{{ url($sliderPostEN_urls[$i]) }}" style="width:100%"> 
+    @endif
+    </a>
   </div>
   @endfor
   @else
@@ -29,7 +39,7 @@
             <div class="card-content-mission">
                 <h2>{{ $research_post[0]->title }}</h2>
                 <p>{!! $research_post[0]->description !!}</p>
-                <a href="{{ $research_post[0]->link }}">Learn More</a>
+                <a href="{{ $research_post[0]->link }}">{{ trans('public.home.learnmore') }}</a>
             </div>
             <div class="card-mission-image"></div>
         </div>
@@ -38,7 +48,7 @@
 <div class="gray-background">
         <div class="container header">
             <div class="header">
-                <h1>News and Events</h1>
+                <h1>{{ trans('public.home.newsand') }}</h1>
             </div>
             <div class="cards">
             @if(count($newsandevent_post)>0)
@@ -67,14 +77,14 @@
         </div>
         <div class="row justify-content-center">
                 <a href="https://cita.agu.edu.tr/category/news--events-11"> 
-                <button type="button" class="btn btn-dark">MORE</button>
+                <button type="button" class="btn btn-dark">{{ trans('public.home.more') }}</button>
             </a>
             </div>
     </div>
     <div class="another">
     <div class="card-video">
         <div class="video-container">
-            <iframe src="{{ url($videolink_post->video_link) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="{{ url($videolink_post->link) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 

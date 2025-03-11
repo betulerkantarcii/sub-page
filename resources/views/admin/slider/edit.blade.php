@@ -9,7 +9,9 @@
 
             <slider-form
                 :action="'{{ $slider->resource_url }}'"
-                :data="{{ $slider->toJson() }}"
+                :data="{{ $slider->toJsonAllLocales() }}"
+                :locales="{{ json_encode($locales) }}"
+                :send-empty-locales="false"
                 v-cloak
                 inline-template>
             

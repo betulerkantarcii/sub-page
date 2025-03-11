@@ -2,11 +2,11 @@
 
 namespace App\Http\Requests\Admin\Videolink;
 
-use Illuminate\Foundation\Http\FormRequest;
+use Brackets\Translatable\TranslatableFormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 
-class UpdateVideolink extends FormRequest
+class UpdateVideolink extends TranslatableFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -18,15 +18,26 @@ class UpdateVideolink extends FormRequest
         return Gate::allows('admin.videolink.edit', $this->videolink);
     }
 
-    /**
-     * Get the validation rules that apply to the request.
+/**
+     * Get the validation rules that apply to the requests untranslatable fields.
      *
      * @return array
      */
-    public function rules(): array
-    {
+    public function untranslatableRules(): array {
         return [
-            'video_link' => ['sometimes', 'string'],
+            
+
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the requests translatable fields.
+     *
+     * @return array
+     */
+    public function translatableRules($locale): array {
+        return [
+            'link' => ['nullable', 'string'],
             
         ];
     }

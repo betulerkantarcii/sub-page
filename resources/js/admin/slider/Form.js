@@ -5,9 +5,11 @@ Vue.component('slider-form', {
     data: function() {
         return {
             form: {
-                link:  '' ,
+                link:  this.getLocalizedFormDefaults() ,
+                
             },
-            mediaCollections: ['cover']
+            mediaCollections: ['coverTR'],
+            mediaCollections: ['coverEN'],
         }
     }
 

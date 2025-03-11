@@ -14,8 +14,8 @@ class CreateVideolinkTable extends Migration
     public function up()
     {
         Schema::create('videolink', function (Blueprint $table) {
-            $table->id();
-            $table->text('video_link');
+            $table->increments('id');
+            $table->jsonb('link')->nullable();
         });
     }
 

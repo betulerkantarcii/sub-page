@@ -9,7 +9,9 @@
 
             <research-form
                 :action="'{{ $research->resource_url }}'"
-                :data="{{ $research->toJson() }}"
+                :data="{{ $research->toJsonAllLocales() }}"
+                :locales="{{ json_encode($locales) }}"
+                :send-empty-locales="false"
                 v-cloak
                 inline-template>
             

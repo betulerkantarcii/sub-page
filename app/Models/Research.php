@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Model;
 use Brackets\Media\HasMedia\ProcessMediaTrait;
 use Brackets\Media\HasMedia\AutoProcessMediaTrait;
@@ -10,15 +9,45 @@ use Brackets\Media\HasMedia\HasMediaCollectionsTrait;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\MediaLibrary\HasMedia;
 use Brackets\Media\HasMedia\HasMediaThumbsTrait;
+use Brackets\Translatable\Traits\HasTranslations;
+
+
 
 class Research extends Model implements HasMedia
 {
-
+    use HasTranslations;
     use ProcessMediaTrait;
     use AutoProcessMediaTrait;
     use HasMediaCollectionsTrait;
     use HasMediaThumbsTrait;
-   
+    protected $fillable = [
+        'title',
+        'description',
+        'link',
+    
+    ];
+    
+    
+    protected $dates = [
+    
+    ];
+    // these attributes are translatable
+    public $translatable = [
+        'title',
+        'description',
+        'link',
+    
+    ];
+    public $timestamps = false;
+    
+    protected $appends = ['resource_url'];
+
+    /* ************************ ACCESSOR ************************* */
+
+    public function getResourceUrlAttribute()
+    {
+        return url('/admin/research/'.$this->getKey());
+    }
     public function registerMediaCollections(): void
     {
 
@@ -43,26 +72,4 @@ class Research extends Model implements HasMedia
         $this->autoRegisterThumb200();
     }
 
-
-    protected $fillable = [
-        'title',
-        'description',
-        'link',
-    
-    ];
-    
-    
-    protected $dates = [
-    
-    ];
-    public $timestamps = false;
-    
-    protected $appends = ['resource_url'];
-
-    /* ************************ ACCESSOR ************************* */
-
-    public function getResourceUrlAttribute()
-    {
-        return url('/admin/research/'.$this->getKey());
-    }
 }

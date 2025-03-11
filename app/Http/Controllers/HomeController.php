@@ -47,13 +47,24 @@ class HomeController extends Controller
 
 
         $slider_post_count = count($slider_post);
-        $sliderPost_urls = [];
+        $sliderPostTR_urls = [];
         for($i=0; $i<$slider_post_count; $i++){
-            $sliderPost=$slider_post[$i]->getMedia('cover');
+            $sliderPost=$slider_post[$i]->getMedia('coverTR');
             if (isset($sliderPost[0])) {
                 foreach ($sliderPost as $c) {
                     $url = $c->getUrl();
-                    $sliderPost_urls[] = $url;
+                    $sliderPostTR_urls[] = $url;
+                }
+            }
+        }
+
+        $sliderPostEN_urls = [];
+        for($i=0; $i<$slider_post_count; $i++){
+            $sliderPost=$slider_post[$i]->getMedia('coverEN');
+            if (isset($sliderPost[0])) {
+                foreach ($sliderPost as $c) {
+                    $url = $c->getUrl();
+                    $sliderPostEN_urls[] = $url;
                 }
             }
         }
@@ -105,7 +116,8 @@ class HomeController extends Controller
             'template_data' => $template_data,
             'menu_content_list' => $menu_content_list,
             'coverPost_urls' => $coverPost_urls,
-            'sliderPost_urls' => $sliderPost_urls,
+            'sliderPostTR_urls' => $sliderPostTR_urls,
+            'sliderPostEN_urls' => $sliderPostEN_urls,
             'dataEtkinlik' => $dataEtkinlik,
             
         ]);

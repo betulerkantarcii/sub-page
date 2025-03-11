@@ -14,10 +14,10 @@ class CreateResearchTable extends Migration
     public function up()
     {
         Schema::create('research', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->text('link')->nullable();
+            $table->increments('id');
+            $table->jsonb('title');
+            $table->jsonb('description');
+            $table->jsonb('link')->nullable();
         });
     }
 

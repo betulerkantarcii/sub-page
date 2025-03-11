@@ -14,10 +14,10 @@ class CreateNewsandeventsTable extends Migration
     public function up()
     {
         Schema::create('newsandevents', function (Blueprint $table) {
-            $table->id();
-            $table->string('heading');
-            $table->text('info')->nullable();
-            $table->text('link')->nullable();
+            $table->increments('id');
+            $table->jsonb('heading');
+            $table->jsonb('info')->nullable();
+            $table->jsonb('link')->nullable();
             $table->date('published')->nullable();
             $table->boolean('enabled')->default(true);
         });

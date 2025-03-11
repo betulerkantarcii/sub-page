@@ -10,6 +10,8 @@
         
         <research-form
             :action="'{{ url('admin/research') }}'"
+            :locales="{{ json_encode($locales) }}"
+            :send-empty-locales="false"
             v-cloak
             inline-template>
 

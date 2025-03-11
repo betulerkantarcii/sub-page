@@ -25,7 +25,7 @@ class IndexNewsandevent extends FormRequest
     public function rules(): array
     {
         return [
-            'orderBy' => 'in:id,heading,published,enabled|nullable',
+            'orderBy' => 'in:id,heading,info,link,published,enabled|nullable',
             'orderDirection' => 'in:asc,desc|nullable',
             'search' => 'string|nullable',
             'page' => 'integer|nullable',
