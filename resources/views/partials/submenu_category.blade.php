@@ -1,5 +1,8 @@
  <!--SUBDOMAIN MENU-->
 
+ @php
+    $currentLocale = \Illuminate\Support\Facades\App::getLocale();
+@endphp
 
   <!--HEADER BAŞLIK-->
   <div class="header-baslik-genel">
@@ -66,11 +69,20 @@
                                 {{$menu_list[$i]->name}}
                             </a>
                         </li>
-                        @endif        
+                        @endif  
+                        
 
                     <?php
                         }
                     ?>
+
+                    @foreach($locales as $locale)
+                        @if($locale != $currentLocale)
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('lang.switch', $locale) }}">{{ strtoupper($locale) }}</a>
+                            </li>
+                        @endif 
+                    @endforeach
 
                   
                 </ul>
