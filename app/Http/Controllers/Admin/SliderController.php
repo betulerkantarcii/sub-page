@@ -79,10 +79,9 @@ class SliderController extends Controller
     public function store(StoreSlider $request)
     {
         // Sanitize input
-        $sanitized = $request->getSanitized();
 
         // Store the Slider
-        $slider = Slider::create($sanitized);
+        $slider = Slider::create($request->validated());
 
         if ($request->ajax()) {
             return ['redirect' => url('admin/sliders'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];

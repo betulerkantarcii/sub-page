@@ -43,6 +43,11 @@ class Slider extends Model implements HasMedia
 
     /* ************************ ACCESSOR ************************* */
 
+    public function getResourceUrlAttribute()
+    {
+        return url('/admin/sliders/'.$this->getKey());
+    }
+
     public function registerMediaCollections(): void
     {
 
@@ -83,4 +88,5 @@ class Slider extends Model implements HasMedia
     {
         $this->autoRegisterThumb200();
     }
+
 }

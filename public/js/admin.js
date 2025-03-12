@@ -5668,18 +5668,16 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-components/Form/AppForm */ "./resources/js/admin/app-components/Form/AppForm.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 Vue.component('slider-form', {
   mixins: [_app_components_Form_AppForm__WEBPACK_IMPORTED_MODULE_0__["default"]],
   data: function data() {
-    return _defineProperty({
+    return {
       form: {
         link: this.getLocalizedFormDefaults()
       },
-      mediaCollections: ['coverTR']
-    }, "mediaCollections", ['coverEN']);
+      mediaCollections: ['coverEN', 'coverTR']
+    };
   }
 });
 

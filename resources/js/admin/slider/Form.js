@@ -8,8 +8,7 @@ Vue.component('slider-form', {
                 link:  this.getLocalizedFormDefaults() ,
                 
             },
-            mediaCollections: ['coverTR'],
-            mediaCollections: ['coverEN'],
+            mediaCollections: ['coverEN', 'coverTR'],
         }
     }
 
