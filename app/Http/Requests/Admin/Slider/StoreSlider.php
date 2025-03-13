@@ -25,7 +25,7 @@ class StoreSlider extends TranslatableFormRequest
      */
     public function untranslatableRules(): array {
         return [
-            
+            'enabled' => ['required', 'boolean'],
         ];
     }
 

@@ -51,8 +51,6 @@
 
                                         <th is='sortable' :column="'id'">{{ trans('admin.newsandevent.columns.id') }}</th>
                                         <th is='sortable' :column="'heading'">{{ trans('admin.newsandevent.columns.heading') }}</th>
-                                        <th is='sortable' :column="'info'">{{ trans('admin.newsandevent.columns.info') }}</th>
-                                        <th is='sortable' :column="'link'">{{ trans('admin.newsandevent.columns.link') }}</th>
                                         <th is='sortable' :column="'published'">{{ trans('admin.newsandevent.columns.published') }}</th>
                                         <th is='sortable' :column="'enabled'">{{ trans('admin.newsandevent.columns.enabled') }}</th>
 
@@ -80,8 +78,6 @@
 
                                     <td>@{{ item.id }}</td>
                                         <td>@{{ item.heading }}</td>
-                                        <td>@{{ item.info }}</td>
-                                        <td>@{{ item.link }}</td>
                                         <td>@{{ item.published | date }}</td>
                                         <td>
                                             <label class="switch switch-3d switch-success">

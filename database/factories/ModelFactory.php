@@ -143,26 +143,7 @@ $factory->define(App\Models\Videolink::class, static function (Faker\Generator $
         
     ];
 });
-/** @var  \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Models\Slider::class, static function (Faker\Generator $faker) {
-    return [
-        'link' => $faker->text(),
-        
-        
-    ];
-});
-/** @var  \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Models\Newsandevent::class, static function (Faker\Generator $faker) {
-    return [
-        'heading' => $faker->sentence,
-        'link' => $faker->text(),
-        'published' => $faker->date(),
-        'enabled' => $faker->boolean(),
-        'info' => $faker->text(),
-        
-        
-    ];
-});
+
 /** @var  \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Models\Research::class, static function (Faker\Generator $faker) {
     return [
@@ -190,6 +171,7 @@ $factory->define(App\Models\Slider::class, static function (Faker\Generator $fak
     return [
         
         'link' => ['en' => $faker->sentence],
+        'enabled' => $faker->boolean(),
         
     ];
 });

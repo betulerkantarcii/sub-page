@@ -5674,7 +5674,8 @@ Vue.component('slider-form', {
   data: function data() {
     return {
       form: {
-        link: this.getLocalizedFormDefaults()
+        link: this.getLocalizedFormDefaults(),
+        enabled: true
       },
       mediaCollections: ['coverEN', 'coverTR']
     };

@@ -16,6 +16,7 @@ class CreateSliderTable extends Migration
         Schema::create('slider', function (Blueprint $table) {
             $table->increments('id');
             $table->jsonb('link')->nullable();
+            $table->boolean('enabled')->default(true);
         });
     }
 

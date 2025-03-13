@@ -47,6 +47,7 @@ class HomeController extends Controller
 
 
         $slider_post_count = count($slider_post);
+
         $sliderPostTR_urls = [];
         for($i=0; $i<$slider_post_count; $i++){
             $sliderPost=$slider_post[$i]->getMedia('coverTR');
@@ -169,8 +170,9 @@ class HomeController extends Controller
 
     function getSlider()
     {
-        $query = Slider::get();
-        return $query;
+        $query = Slider::where('enabled', true);
+        $query->orderBy('id', 'ASC');
+        return $query->get();
     }
 
     function getResearch()
