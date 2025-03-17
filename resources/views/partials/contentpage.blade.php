@@ -62,7 +62,7 @@
                         $e_m = $eventTime->format('m');
                         $e_y = $eventTime->format('Y');
                         @endphp
-                        <p>Published: {{ $e_d}}.{{$e_m}}.{{$e_y}}</p>
+                        <p>{{trans('public.home.published')}}: {{ $e_d}}.{{$e_m}}.{{$e_y}}</p>
                         @if($newsandevent_post[$i]->link == "")
                         <h2>{{ $newsandevent_post[$i]->heading }}</h2>
                         @else
